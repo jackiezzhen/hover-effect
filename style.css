@@ -7,12 +7,15 @@ html {
     margin: 0;
     padding: 0;
 }
-
-.container {
+.container{
+    object-fit:fill;
+    justify-content: center;
+    }
+.box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: auto;
+    margin: 0;
 }
 
 /* Sticky Top Bar */
@@ -21,7 +24,7 @@ html {
     top: 0;
     background-color: black;
     color: white;
-    height: 50px;
+    height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +36,7 @@ html {
 }
 
 .top {
-    padding: 4px;
+    padding: 1%;
 }
 
 .center-text {
@@ -45,7 +48,6 @@ html {
 /* Background Video (Needs Fixing) */
 .video {
     width: 100%;
-    height: calc(auto+10vh);
     object-fit: fill;
     position: fixed;
     z-index: -1;
@@ -59,10 +61,10 @@ html {
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
     top: 90px;
-    margin: 55px;
-    width: 120px;
-    height: 120px;
-    padding: 6px;
+    margin: 2%;
+    width: 8%;
+    height: auto;
+    padding: 0.3%;
     background-color: rgb(68, 161, 255);
     display: flex;
     flex-direction: column;
@@ -77,33 +79,16 @@ html {
 
 /* Enlarge on Hover */
 .imgbox:hover {
-    width: 250px;
-    height: 250px;
+    width: 10%;
+    height: 15%;
     box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.2);
 }
-
-/* Click and Hold to Make Even Bigger then small*/
-.imgbox:active {
-    width: 400px;
-    height: 400px;
-    max-width: 100%;
-    box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Hide Cover and Show Gallery */
 .imgbox .cover {
     max-width: 100%;
     height: auto;
     opacity: 1;
     transition: 0.8s ease-out;
-}
-
-.imgbox:active .cover {
-    opacity: 0;
-    max-width: 0;
-    padding: 0;
-    width: 0;
-    height: 0;
+    
 }
 
 .gallery {
@@ -115,7 +100,7 @@ html {
     left: 0;
     right: 0;
 }
-
+/*
 .imgbox:active .gallery {
     opacity: 1;
 }
@@ -139,31 +124,6 @@ html {
 .imgbox:hover .name {
     opacity: 1;
 }
-
-.imgbox:active .name {
-    opacity: 0;
-}
-
-/* Explain */
-.explain {
-    position: absolute;
-    opacity: 0;
-    /* Set opacity to 1 by default */
-}
-
-.imgbox:active .explain {
-    align-items: center;
-    text-align: center;
-    left: 0;
-    right: 0;
-    color: black;
-    padding: 10px;
-    z-index: 1;
-    font-family: 'Noto Sans', sans-serif;
-    display: flex;
-    opacity: 1;
-}
-
 /*pulse*/
 @keyframes pulse {
     0% {
@@ -233,63 +193,16 @@ html {
     background-color: #6de2ff;
 }
 
-/*active*/
-#box1:active .explain {
-    bottom: 5%;
-    font-size: 14px;
-}
-
-#box2:active .explain {
-    bottom: -1%;
-    font-size: 13px;
-}
-
-#box3:active .explain {
-    bottom: 15%;
-    font-size: 14px;
-    transform: rotate(3800deg);
-    transition: 2s;
-}
-
-#box4:active .explain {
-    bottom: 2%;
-    font-size: 12px;
-}
-#box5:active{filter:grayscale(0%); transition: filter 0.5s; transition: 1s;}
-#box5:active .explain {
-    bottom: 2%;
-    font-size: 13px;
-}
-
-#box6:active .explain {
-    bottom: -3%;
-    font-size: 12px;
-}
-#box7:active{filter:grayscale(0%); transition: filter 0.5s;} transition: 1s;
-#box7:active .explain {
-    bottom: -1.5%;
-    font-size: 12px;
-}
-
-#box8:active .explain {
-    bottom: 6%;
-    font-size: 13px;
-}
-
-#box9:active .explain {
-    bottom: 9%;
-    font-size: 14px;
-}
-
 @media screen and (max-width:1000px) {
     .imgbox {
-        width: 40%;
+        width: 20%;
+        height:20%
     }
 }
 
 @media screen and (max-width:800px) {
     .img-box {
-        width: 100%;
-        height: 100%;
+        width: 20%;
+        height: 20%;
     }
 }
