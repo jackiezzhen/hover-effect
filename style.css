@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-/* Base Styles */
-body,
-html {
+body, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.container{
-    object-fit:fill;
-    justify-content: center;
-    }
-.box {
+
+.container {
+    position:relative;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    margin: 0;
+    flex-direction:row;
 }
+.box { 
+    align-items:center;
+    position:relative;
+    justify-content: center;
+    margin: 16px;}
 
-/* Sticky Top Bar */
 .topbar {
     position: absolute;
     top: 0;
@@ -28,10 +29,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 90%;
-    margin: auto;
-    left: 5%;
-    right: 5%;
+    width: 100%;
     z-index: 1;
 }
 
@@ -39,70 +37,42 @@ html {
     padding: 1%;
 }
 
-.center-text {
-    font-size: 14px;
-}
-
-
-
-/* Background Video (Needs Fixing) */
 .video {
     width: 100%;
-    object-fit: fill;
+    height: 100%;
+    object-fit: cover;
     position: fixed;
     z-index: -1;
-    width: 100%;
-    height: 100%;
 }
-
-/* 3x3 boxes */
 .imgbox {
     position: relative;
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
     top: 90px;
-    margin: 2%;
-    width: 8%;
-    height: auto;
+    margin: 16%;
+    width: 150px;
+    height: 150px;
     padding: 0.3%;
     background-color: rgb(68, 161, 255);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    transition: width 0.8s, height 0.8s, box-shadow 0.8s;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     overflow: hidden;
     opacity: 1;
 }
 
-
-
-/* Enlarge on Hover */
 .imgbox:hover {
-    width: 10%;
-    height: 15%;
-    box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.5,1.5);
 }
+
 .imgbox .cover {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height:auto;
     opacity: 1;
     transition: 0.8s ease-out;
-    
-}
-
-.gallery {
-    position: absolute;
-    max-width: 100%;
-    top: 0;
-    opacity: 0;
-    transition: 0.5s;
-    left: 0;
-    right: 0;
-}
-/*
-.imgbox:active .gallery {
-    opacity: 1;
 }
 
 /* Name */
@@ -155,8 +125,6 @@ html {
 
 /*hover*/
 #box1:hover {
-    bottom: 5%;
-    font-size: 14px;
     opacity: 0.7;
 }
 
@@ -195,14 +163,12 @@ html {
 
 @media screen and (max-width:1000px) {
     .imgbox {
-        width: 20%;
-        height:20%
+        width:40%;
     }
 }
 
 @media screen and (max-width:800px) {
     .img-box {
         width: 20%;
-        height: 20%;
     }
 }
