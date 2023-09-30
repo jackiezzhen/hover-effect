@@ -1,24 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-body, html {
+body,
+html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    position:relative;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-direction:row;
+    flex-direction: row;
 }
-.box { 
-    align-items:center;
-    position:relative;
+
+.box {
+    align-items: center;
+    position: relative;
     justify-content: center;
-    margin: 16px;}
+    margin: 16px;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 
 .topbar {
     position: absolute;
@@ -26,11 +39,15 @@ body, html {
     background-color: black;
     color: white;
     height: 5%;
+    left:35%;
+    right:35%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    margin: 3%;
     z-index: 1;
+    max-width:30%;
+    animation: 3s linear 1s infinite alternate slidein;
 }
 
 .top {
@@ -44,11 +61,12 @@ body, html {
     position: fixed;
     z-index: -1;
 }
+
 .imgbox {
     position: relative;
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    top: 90px;
+    top: 150px;
     margin: 16%;
     width: 150px;
     height: 150px;
@@ -65,12 +83,12 @@ body, html {
 
 .imgbox:hover {
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.4);
-    transform: scale(1.5,1.5);
+    transform: scale(1.5, 1.5);
 }
 
 .imgbox .cover {
     width: 100%;
-    height:auto;
+    height: auto;
     opacity: 1;
     transition: 0.8s ease-out;
 }
@@ -94,6 +112,7 @@ body, html {
 .imgbox:hover .name {
     opacity: 1;
 }
+
 /*pulse*/
 @keyframes pulse {
     0% {
@@ -114,6 +133,7 @@ body, html {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(1000deg);
     }
@@ -139,16 +159,28 @@ body, html {
 #box4:hover {
     border: 5px solid #2ecc71;
 }
-#box5{filter:grayscale(0%); transition: filter 0.5s; transition: 1s;}
+
+#box5 {
+    filter: grayscale(0%);
+    transition: filter 0.5s;
+    transition: 1s;
+}
+
 #box5:hover {
     filter: grayscale(100%);
-    transition:1s;
+    transition: 1s;
 }
 
 #box6:hover {
     animation: pulse 2s infinite, rotate 2s forwards;
 }
-#box7{filter:grayscale(0%); transition: filter 0.5s; transition: 1s;}
+
+#box7 {
+    filter: grayscale(0%);
+    transition: filter 0.5s;
+    transition: 1s;
+}
+
 #box7:hover {
     filter: grayscale(100%);
 }
@@ -163,7 +195,7 @@ body, html {
 
 @media screen and (max-width:1000px) {
     .imgbox {
-        width:40%;
+        width: 40%;
     }
 }
 
